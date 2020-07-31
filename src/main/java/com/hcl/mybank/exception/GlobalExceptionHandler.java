@@ -41,6 +41,15 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 				HttpStatus.NOT_FOUND.value(), request.getDescription(false));
 		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
 	}
+	
+	
+	@ExceptionHandler(NotValidBeneficiaryException.class)
+	public ResponseEntity<ErrorResponse> globalExceptionHandler(NotValidBeneficiaryException notValidBeneficiaryException,
+			WebRequest request) {
+		ErrorResponse errorResponse = new ErrorResponse(notValidBeneficiaryException.getMessage(),
+				HttpStatus.NOT_FOUND.value(), request.getDescription(false));
+		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+	}
 
 	@ExceptionHandler(NullPointerException.class)
 	public ResponseEntity<ErrorResponse> globalExceptionHandler(NullPointerException nullPointerException,

@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Account {
@@ -22,6 +24,14 @@ public class Account {
 	private Double availableBalance;
 	
 	private LocalDate accountCreationDate;
+	
+	
+    @OneToOne
+    @JoinColumn(name = "customerId")
+    private Customer customer;
+
+ 
+
 
 	public Integer getAccountId() {
 		return accountId;
