@@ -1,11 +1,11 @@
 package com.hcl.mybank.entity;
 
-import java.time.LocalDate;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Account {
@@ -21,12 +21,17 @@ public class Account {
 	
 	private Double availableBalance;
 	
-	private LocalDate accountCreationDate;
+	private String accountCreationDate;
 
+	@OneToOne
+	@JoinColumn(name = "customerId")
+	private Customer customer;
+	
 	public Integer getAccountId() {
 		return accountId;
 	}
-
+	
+	
 	public void setAccountId(Integer accountId) {
 		this.accountId = accountId;
 	}
@@ -55,11 +60,11 @@ public class Account {
 		this.availableBalance = availableBalance;
 	}
 
-	public LocalDate getAccountCreationDate() {
+	public String getAccountCreationDate() {
 		return accountCreationDate;
 	}
 
-	public void setAccountCreationDate(LocalDate accountCreationDate) {
+	public void setAccountCreationDate(String accountCreationDate) {
 		this.accountCreationDate = accountCreationDate;
 	}
 
