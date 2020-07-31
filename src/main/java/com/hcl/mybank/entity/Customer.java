@@ -1,5 +1,7 @@
 package com.hcl.mybank.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +22,7 @@ public class Customer {
 
 	@OneToMany
 	@JoinColumn(name = "accountId")
-	private Account accountId;
+	private List<Account> accountList;
 
 	public Integer getCustomerId() {
 		return customerId;
@@ -45,13 +47,4 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public Account getAccountId() {
-		return accountId;
-	}
-
-	public void setAccountId(Account accountId) {
-		this.accountId = accountId;
-	}
-
 }

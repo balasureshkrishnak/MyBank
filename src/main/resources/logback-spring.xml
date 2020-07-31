@@ -12,7 +12,7 @@
 		</encoder>
 	</appender>
 
-	<logger name="com.hcl.ecommerce" level="debug">
+	<logger name="com.hcl.mybank" level="debug">
 		<appender-ref ref="STDOUT" />
 	</logger>
 
@@ -29,7 +29,7 @@
 	</appender>
 
 
-	<logger name="com.hcl.ecommerce" level="debug">
+	<logger name="com.hcl.mybank" level="debug">
 		<appender-ref ref="FileAppender" />
 	</logger>
 
