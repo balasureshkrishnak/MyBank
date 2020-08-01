@@ -1,14 +1,25 @@
 package com.hcl.mybank.dto;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class TransactionRequestDto {
 	
-	 private String fromAccountNumber;
-	 
-	 private String toAccountNumber;
-	 
-	 private Double transactionAmount;
-	 
-	 private String comments;
+	@NotNull(message = "Name may not be null")
+	@NotEmpty(message = "Name may not be empty")
+	private String fromAccountNumber;
+	
+	@NotNull(message = "Name may not be null")
+	@NotEmpty(message = "Name may not be empty")
+	private String toAccountNumber;
+		
+	@NotNull(message = "Name may not be null")
+	@NotEmpty(message = "Name may not be empty")
+	private Double transactionAmount;
+		
+	@NotNull(message = "Name may not be null")
+	@NotEmpty(message = "Name may not be empty")
+	private String comments;
 
 	public String getFromAccountNumber() {
 		return fromAccountNumber;
