@@ -23,6 +23,14 @@ public class Customer {
 	@OneToMany
 	@JoinColumn(name = "accountId")
 	private List<Account> accountList;
+	
+	public List<Account> getAccountList() {
+		return accountList;
+	}
+
+	public void setAccountList(List<Account> accountList) {
+		this.accountList = accountList;
+	}
 
 	public Integer getCustomerId() {
 		return customerId;
